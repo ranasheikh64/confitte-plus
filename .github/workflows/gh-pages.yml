@@ -1,0 +1,34 @@
+name: Deploy Example to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # অথবা আপনার ডিফল্ট ব্রাঞ্চের নাম (যেমন: master)
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Install Dependencies
+        run: flutter pub get
+        working-directory: ./example
+
+      - name: Build Web
+        # এখানে আপনার রিপোজিটরির নাম দিন
+        run: flutter build web --release --base-href "/confettie-plus/"
+        working-directory: ./example
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./example/build/web

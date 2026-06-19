@@ -1,5 +1,12 @@
 # confettie_plus 🎊
 
+<div align="center">
+  <b>Proudly brought to you by</b><br>
+  <a href="https://github.com/ranasheikh64">
+    <img src="https://img.shields.io/badge/Jronix-A%20Software%20Solution-7C3AED?style=for-the-badge" alt="Jronix">
+  </a>
+</div>
+
 A **premium, highly customizable** Flutter package featuring 30+ beautiful confetti shapes, physics-based animations, and **stunning natural animated backgrounds** (Sun, Moon, Galaxy) with full developer control.
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Click_Here-blue?style=for-the-badge&logo=flutter)](https://ranasheikh64.github.io/confitte-plus/)

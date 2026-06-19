@@ -1,24 +1,24 @@
 # confettie_plus 🎊
 
-A **premium, highly customizable** Flutter confetti package with 15+ beautiful particle shapes, realistic physics, and full developer control.
+A **premium, highly customizable** Flutter package featuring 30+ beautiful confetti shapes, physics-based animations, and **stunning natural animated backgrounds** (Sun, Moon, Galaxy) with full developer control.
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Click_Here-blue?style=for-the-badge&logo=flutter)](https://ranasheikh64.github.io/confitte-plus/)
 
 ---
 
 ## ✨ Features
 
-- **15+ Built-in Shapes** — Rectangle, Circle, Star, Heart, Diamond, Hexagon, Triangle, Snowflake, Spiral, Wave, Leaf, Teardrop, and more
-- **Physics-based animation** — gravity, drag, and fade-out
-- **Burst or Continuous** emission modes
-- **7 blast directions** — up, down, left, right, explosive, upArc, downArc
-- **Custom emission source** — any `Alignment` on screen
-- **Fully customizable** — colors, particle count, size range, blast force, gravity, drag
-- **Custom shapes** — bring your own drawing code via `CustomShape`
-- **Tree-shaking friendly** — only the shapes you use end up in your build
-- **Performance optimized** — `RepaintBoundary`, `Paint` reuse, off-screen culling
+- **🎉 30+ Premium Confetti Shapes** — Stars, Hearts, Moons, Butterflies, Crowns, Sparkles, Lightning, 3D Cubes, Custom Emojis, and many more!
+- **🌌 3 Natural Animated Backgrounds** — Sun (with rays & glow), Moon (with phases & starfield), Galaxy (with shooting stars & nebulas).
+- **🕹️ Live Interactive Demo** — [Try it out in your browser!](https://ranasheikh64.github.io/confitte-plus/)
+- **🚀 Physics-based animation** — gravity, drag, emission force, and fade-out.
+- **🔄 Emission Modes** — Burst (explosive) or Continuous (rain/snow effects).
+- **🎯 Custom emission source & direction** — Control exact placement and angle.
+- **⚡ Performance Optimized** — Built using `CustomPainter`, `RepaintBoundary`, and off-screen culling. Tree-shaking friendly.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Confetti)
 
 ```dart
 import 'package:confettie_plus/confettie_plus.dart';
@@ -29,9 +29,10 @@ final controller = ConfettieController(duration: Duration(seconds: 5));
 // 2. Wrap your widget
 ConfettieWidget(
   controller: controller,
-  shapes: [StarShape(), HeartShape(), DiamondShape()],
-  colors: [Colors.pink, Colors.amber, Colors.cyan],
+  shapes: [StarShape(), HeartShape(), ButterflyShape(), CrownShape()],
+  colors: [Colors.pink, Colors.amber, Colors.cyan, Colors.purple],
   numberOfParticles: 150,
+  blastDirection: BlastDirection.explosive,
   child: Scaffold(
     body: Center(
       child: ElevatedButton(
@@ -52,52 +53,75 @@ void dispose() {
 
 ---
 
-## 🎨 Available Shapes
+## 🌌 Premium Animated Backgrounds
 
-| Shape | Class | Description |
-|-------|-------|-------------|
-| Rectangle | `RectangleShape()` | Classic flat confetti strip |
-| Square | `SquareShape()` | Square confetti |
-| Rounded Rect | `RoundedRectShape()` | Rectangle with rounded corners |
-| Circle | `CircleShape()` | Circular dot |
-| Donut | `DonutShape()` | Ring / donut |
-| Star ⭐ | `StarShape()` | Configurable star (3–10 points) |
-| Snowflake ❄️ | `SnowflakeShape()` | 6-point snowflake |
-| Heart ❤️ | `HeartShape()` | Heart shape |
-| Bow 🎀 | `BowShape()` | Ribbon bow |
-| Moon 🌙 | `MoonShape()` | Crescent moon |
-| Flower 🌸 | `FlowerShape()` | Multi-petal flower |
-| Triangle | `TriangleShape()` | Equilateral triangle |
-| Arrow | `ArrowShape()` | Upward arrow |
-| Lightning ⚡ | `LightningShape()` | Lightning bolt |
-| Diamond 💎 | `DiamondShape()` | Rhombus |
-| Hexagon | `HexagonShape()` | Hexagonal shape |
-| Pentagon | `PentagonShape()` | Pentagon |
-| Spiral 🎊 | `SpiralShape()` | Curled spiral ribbon |
-| Streamer | `StreamerShape()` | Curly streamer |
-| Cross | `CrossShape()` | Plus sign |
-| X | `XShape()` | X shape |
-| Wave | `WaveShape()` | Wavy ribbon |
-| Teardrop | `TeardropShape()` | Teardrop |
-| Leaf 🍃 | `LeafShape()` | Leaf with midrib |
-| Custom ✨ | `CustomShape(builder: ...)` | Your own drawing code |
+Use these beautiful, animated widgets as backgrounds for cards, dialogs, or entire screens!
+
+### ☀️ Animated Sun
+```dart
+AnimatedSunBackground(
+  size: 200,
+  color: Color(0xFFFFD700),
+  rayCount: 12,
+  showGlow: true,
+  speed: 1.0,
+  child: YourWidget(),
+)
+```
+
+### 🌙 Animated Moon (with Phases)
+```dart
+AnimatedMoonBackground(
+  size: 160,
+  moonColor: Color(0xFFFFF8E7),
+  moonPhase: MoonPhase.crescent, // full, gibbous, half, crescent, thinCrescent
+  starCount: 40,
+  speed: 1.0,
+  child: YourWidget(),
+)
+```
+
+### 🌌 Animated Galaxy
+```dart
+AnimatedGalaxyBackground(
+  starCount: 150,
+  primaryColor: Color(0xFF7C3AED),
+  secondaryColor: Color(0xFF1E3A5F),
+  showNebula: true,
+  speed: 1.0,
+  child: YourWidget(),
+)
+```
 
 ---
 
-## ⚙️ All Parameters
+## 🎨 Available Confetti Shapes
+
+Over 30 shapes are built-in! You can also easily add your own.
+
+| Shape | Class |
+|-------|-------|
+| **Premium** | `CrownShape`, `ButterflyShape`, `SparkleShape`, `GemShape`, `CoinShape`, `MusicNoteShape` |
+| **Celestial** | `StarShape`, `MoonShape`, `SunShape`, `GalaxyShape`, `CloudShape`, `LightningShape` |
+| **Nature** | `FlowerShape`, `LeafShape`, `SnowflakeShape`, `FlameShape`, `TeardropShape` |
+| **Classic** | `RectangleShape`, `CircleShape`, `SquareShape`, `TriangleShape`, `DiamondShape`, `HexagonShape`, `PentagonShape` |
+| **Ribbons** | `SpiralShape`, `StreamerShape`, `WaveShape`, `BowShape` |
+| **Custom Emoji** | `EmojiShape(emoji: '🔥')` |
+| **Custom Code** | `CustomShape(builder: ...)` |
+
+---
+
+## 🎯 Advanced Parameters
 
 ```dart
 ConfettieWidget(
-  controller: controller,          // required
-  child: myWidget,                 // required
-
-  // Shapes — only what you include will appear
-  shapes: [StarShape(), HeartShape()],
-
-  // Colors
-  colors: [Colors.pink, Colors.amber],
-
-  // Particle settings
+  controller: controller,
+  child: myWidget,
+  
+  shapes: [EmojiShape(emoji: '💸'), CoinShape(), GemShape()],
+  colors: [Colors.green, Colors.yellow],
+  
+  // Sizing & Count
   numberOfParticles: 120,
   minParticleSize: 6.0,
   maxParticleSize: 14.0,
@@ -107,64 +131,13 @@ ConfettieWidget(
   blastForce: 350.0,     // initial speed
   drag: 0.05,            // air resistance (0–0.5)
 
-  // Direction
-  blastDirection: BlastDirection.explosive,
-  emissionSource: Alignment.topCenter,
+  // Direction & Position
+  blastDirection: BlastDirection.up,
+  emissionSource: Alignment.bottomCenter,
 
   // Emission mode
-  emissionBehavior: EmissionBehavior.burst,
-  particlesPerSecond: 30,  // for continuous mode
-)
-```
-
----
-
-## 🎯 Usage Examples
-
-### Stars from bottom
-```dart
-ConfettieWidget(
-  controller: controller,
-  shapes: [StarShape(), StarShape(points: 8)],
-  blastDirection: BlastDirection.upArc,
-  emissionSource: Alignment.bottomCenter,
-  gravity: 200,
-  blastForce: 400,
-  child: myChild,
-)
-```
-
-### Continuous rain effect
-```dart
-ConfettieWidget(
-  controller: controller,
-  shapes: [TeardropShape(), CircleShape()],
   emissionBehavior: EmissionBehavior.continuous,
-  particlesPerSecond: 25,
-  blastDirection: BlastDirection.down,
-  gravity: 400,
-  child: myChild,
-)
-```
-
-### Custom shape
-```dart
-ConfettieWidget(
-  controller: controller,
-  shapes: [
-    CustomShape(
-      builder: (canvas, paint, size) {
-        canvas.drawRRect(
-          RRect.fromRectAndRadius(
-            Rect.fromCenter(center: Offset.zero, width: size, height: size),
-            Radius.circular(4),
-          ),
-          paint,
-        );
-      },
-    ),
-  ],
-  child: myChild,
+  particlesPerSecond: 30,
 )
 ```
 
@@ -174,14 +147,13 @@ ConfettieWidget(
 
 | Particle Count | Performance | Notes |
 |----------------|-------------|-------|
-| 50–100 | Excellent | All devices |
-| 100–200 | Great | Recommended default |
-| 200–350 | Good | RepaintBoundary helps |
-| 350+ | Moderate | Low-end devices may lag |
+| 50–100 | Excellent | Flawless on all devices |
+| 100–250 | Great | Recommended default |
+| 250–400 | Good | Works well, physics optimizations kick in |
+| 400+ | Moderate | Low-end devices may experience lag |
 
 ---
 
 ## 📄 License
 
 MIT © confettie_plus contributors
-# confitte-plus

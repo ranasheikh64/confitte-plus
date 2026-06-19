@@ -1,0 +1,22 @@
+name: confettie_plus
+description: >
+  A premium, highly customizable Flutter confetti package with 10+ beautiful
+  particle shapes, physics-based animations, and full user control over
+  colors, sizes, gravity, blast direction, and more.
+version: 0.0.1
+homepage: https://github.com/yourname/confettie_plus
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:

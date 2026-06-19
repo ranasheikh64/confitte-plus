@@ -24,7 +24,7 @@ jobs:
 
       - name: Build Web
         # এখানে আপনার রিপোজিটরির নাম দিন
-        run: flutter build web --release --base-href "/confettie-plus/"
+        run: flutter build web --release --base-href "/confitte-plus/"
         working-directory: ./example
 
       - name: Deploy to GitHub Pages
